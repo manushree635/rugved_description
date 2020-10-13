@@ -82,7 +82,7 @@
   </link>
   <joint
     name="left_wheel_joint"
-    type="revolute">
+    type="continuous">
     <origin
       xyz="0.19629 -0.32301 0.17667"
       rpy="-1.5708 -0.25912 -0.00040556" />
@@ -93,8 +93,6 @@
     <axis
       xyz="0 0 -1" />
     <limit
-      lower="-99999999999999999999999999999999999999999999999"
-      upper="999999999999999999999999999999999999999999999999"
       effort="1000"
       velocity="1" />
   </joint>
@@ -140,7 +138,7 @@
   </link>
   <joint
     name="right_wheel_joint"
-    type="revolute">
+    type="continuous">
     <origin
       xyz="0.19655 0.32239 0.17667"
       rpy="1.5708 -0.034643 -0.00040556" />
@@ -151,8 +149,6 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="-99999999999999999999999999999999999999999999999"
-      upper="999999999999999999999999999999999999999999999999"
       effort="1000"
       velocity="1" />
   </joint>
@@ -198,7 +194,7 @@
   </link>
   <joint
     name="vertical_castor_joint"
-    type="revolute">
+    type="continuous">
     <origin
       xyz="-0.56553 0 0.049371"
       rpy="1.5704 -1.7164E-05 1.5268" />
@@ -209,8 +205,6 @@
     <axis
       xyz="0 1 0" />
     <limit
-      lower="-99999999999999999999999999999999999999999999999"
-      upper="999999999999999999999999999999999999999999999999"
       effort="400"
       velocity="1" />
   </joint>
@@ -256,7 +250,7 @@
   </link>
   <joint
     name="horizontal_castor_joint"
-    type="revolute">
+    type="continuous">
     <origin
       xyz="0 0.013 0"
       rpy="1.5708 0.97377 -1.5708" />
@@ -267,11 +261,12 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="-99999999999999999999999999999999999999999999999"
-      upper="999999999999999999999999999999999999999999999999"
       effort="500"
       velocity="1" />
   </joint>
+  
+  
+  
   <!--differential drive plugin -->
   <gazebo>
     <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
