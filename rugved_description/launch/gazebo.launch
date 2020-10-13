@@ -17,4 +17,8 @@
     pkg="rostopic"
     type="rostopic"
     args="pub /calibrated std_msgs/Bool true" />
+  <node 
+    name="rqt_robot_steering" 
+    pkg="rqt_robot_steering" 
+    type="rqt_robot_steering" />
 </launch>
