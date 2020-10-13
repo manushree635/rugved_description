@@ -1,0 +1,293 @@
+<robot
+  name="rugved_description">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.10025 -0.00023509 0.24914"
+        rpy="0 0 0" />
+      <mass
+        value="15.129" />
+      <inertia
+        ixx="0.93792"
+        ixy="6.0247E-05"
+        ixz="0.12433"
+        iyy="1.0368"
+        iyz="-0.00022393"
+        izz="1.4369" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rugved_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.52941 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rugved_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_wheel">
+    <inertial>
+      <origin
+        xyz="4.8804E-06 4.0992E-08 -0.030108"
+        rpy="0 0 0" />
+      <mass
+        value="3.4752" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rugved_description/meshes/left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rugved_description/meshes/left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wheel_joint"
+    type="revolute">
+    <origin
+      xyz="0.19629 -0.32301 0.17667"
+      rpy="-1.5708 -0.25912 -0.00040556" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_wheel" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-99999999999999999999999999999999999999999999999"
+      upper="999999999999999999999999999999999999999999999999"
+      effort="1000"
+      velocity="1" />
+  </joint>
+  <link
+    name="right_wheel">
+    <inertial>
+      <origin
+        xyz="4.8804E-06 4.0992E-08 -0.030108"
+        rpy="0 0 0" />
+      <mass
+        value="3.4752" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rugved_description/meshes/right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rugved_description/meshes/right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wheel_joint"
+    type="revolute">
+    <origin
+      xyz="0.19655 0.32239 0.17667"
+      rpy="1.5708 -0.034643 -0.00040556" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_wheel" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-99999999999999999999999999999999999999999999999"
+      upper="999999999999999999999999999999999999999999999999"
+      effort="1000"
+      velocity="1" />
+  </joint>
+  <link
+    name="castor_cover">
+    <inertial>
+      <origin
+        xyz="-5.3158E-06 0.04242 7.9919E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.050568" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rugved_description/meshes/castor_cover.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rugved_description/meshes/castor_cover.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="vertical_castor_joint"
+    type="revolute">
+    <origin
+      xyz="-0.56553 0 0.049371"
+      rpy="1.5704 -1.7164E-05 1.5268" />
+    <parent
+      link="base_link" />
+    <child
+      link="castor_cover" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-99999999999999999999999999999999999999999999999"
+      upper="999999999999999999999999999999999999999999999999"
+      effort="400"
+      velocity="1" />
+  </joint>
+  <link
+    name="castor_wheel">
+    <inertial>
+      <origin
+        xyz="3.785E-08 -6.6349E-08 4.9622E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.66966" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rugved_description/meshes/castor_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rugved_description/meshes/castor_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="horizontal_castor_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.013 0"
+      rpy="1.5708 0.97377 -1.5708" />
+    <parent
+      link="castor_cover" />
+    <child
+      link="castor_wheel" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-99999999999999999999999999999999999999999999999"
+      upper="999999999999999999999999999999999999999999999999"
+      effort="500"
+      velocity="1" />
+  </joint>
+  
+  <gazebo>
+    <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+      <legacyMode>false</legacyMode>
+      <alwaysOn>true</alwaysOn>
+      <updateRate>10</updateRate>
+      <leftJoint>left_wheel_joint</leftJoint>
+      <rightJoint>right_wheel_joint</rightJoint>
+      <wheelSeparation>0.6454</wheelSeparation>
+      <wheelDiameter>0.1</wheelDiameter>
+      <wheelTorque>10</wheelTorque>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>base_footprint</odometryTopic>
+      <odometryFrame>base_footprint</odometryFrame>
+      <robotBaseFrame>base_link</robotBaseFrame>
+      
+    </plugin>
+  </gazebo>
+</robot>
